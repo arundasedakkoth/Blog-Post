@@ -11,6 +11,41 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Cache;
 
+/**
+ * App\Models\BlogPost
+ *
+ * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string $title
+ * @property string $content
+ * @property int $user_id
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Comment[] $comments
+ * @property-read int|null $comments_count
+ * @property-read \App\Models\Image|null $image
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Tag[] $tags
+ * @property-read int|null $tags_count
+ * @property-read User $user
+ * @method static \Database\Factories\BlogPostFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost latest()
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost latestWithRelations()
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost mostCommented()
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost newQuery()
+ * @method static \Illuminate\Database\Query\Builder|BlogPost onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost query()
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BlogPost whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|BlogPost withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|BlogPost withoutTrashed()
+ * @mixin \Eloquent
+ */
 class BlogPost extends Model
 {
     use HasFactory;
